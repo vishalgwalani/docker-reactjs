@@ -9,4 +9,4 @@ before_install :
   - docker build -t vishal/docker-reactjs -f Dockerfile.dev .
 
 script : 
-  - docker run vishal/docker-reactjs npm run test -- --coverage
+  - docker run -e CI=true vishal/docker-reactjs npm run test -- --coverage
