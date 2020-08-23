@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install :
+  - docker build -t vishal/docker-reactjs -f Dockerfile.dev .
+
+script : 
+  - docker run vishal/docker-reactjs npm run test -- --coverage
